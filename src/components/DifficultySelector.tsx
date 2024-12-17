@@ -20,7 +20,7 @@ export const DifficultySelector: React.FC<DifficultySelectorProps> = ({ onSelect
           <Users className="w-8 h-8 text-green-600" />
           <div className="text-left">
             <h3 className="text-xl font-semibold text-green-700">こども向け</h3>
-            <p className="text-green-600">やさしい問題に挑戦！</p>
+            {/* <p className="text-green-600">やさしい問題に挑戦！</p> */}
           </div>
         </button>
 
@@ -33,7 +33,7 @@ export const DifficultySelector: React.FC<DifficultySelectorProps> = ({ onSelect
           <Brain className="w-8 h-8 text-blue-600" />
           <div className="text-left">
             <h3 className="text-xl font-semibold text-blue-700">おとな向け</h3>
-            <p className="text-blue-600">むずかしい問題に挑戦！</p>
+            {/* <p className="text-blue-600">むずかしい問題に挑戦！</p> */}
           </div>
         </button>
       </div>

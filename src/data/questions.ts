@@ -7,7 +7,7 @@ export const adultQuestions: Question[] = [
     options: ['部屋を明るくする', '速く走る練習をする', '水を撒いて遊ぶ', '部屋を散らかす'],
     correctAnswer: 0,
     explanation: '部屋を明るくすると、どこに物があるかがよく見えるので、つまずいたり転んだりする危険を減らせます。他にも、水をこぼさないように気をつけたり、散らかっているものを片付けたりすると、転ぶのを防ぐことができます。安全な環境を作って、転ばないようにしましょう！',
-    explanationImage: 'https://images.unsplash.com/photo-1527515545081-5db817172677?auto=format&fit=crop&w=800&q=80'
+    explanationImage: ''
   },
   {
     id: 2,
@@ -19,27 +19,27 @@ export const adultQuestions: Question[] = [
   },
   {
     id: 3,
-    text: '階段からの転落を防ぐための正しい行動は？',
-    options: ['手すりを使う', '走って降りる', '振り返って話す', '荷物を両手に持つ'],
-    correctAnswer: 0,
-    explanation: '階段では必ず手すりを使い、ゆっくりと安全に上り下りすることが大切です。特に、荷物は片手で持ち、もう片方の手で手すりを使うようにしましょう。',
-    explanationImage: 'https://images.unsplash.com/photo-1520453714493-d85cdd7b033c?auto=format&fit=crop&w=800&q=80'
+    text: '2024年の出動件数が最も多い日に同時に出動していた松山市の救急車は何両でしょうか？​',
+    options: ['4', '7', '11', '15'],
+    correctAnswer: 2,
+    explanation: '2024年の出動件数が最も多い日に同時に出動していた松山市の救急車は11両でした。',
+    explanationImage: 'src/image/1.jpg'
   },
   {
     id: 4,
-    text: 'キッチンでの火災を防ぐために最も重要なことは？',
-    options: ['調理中はその場を離れない', 'テレビを見ながら調理する', '油を多めに使う', 'ガスコンロを常に最大火力にする'],
+    text: '松山市で2014年4月の救急コール数が最も多かった地区はどこでしょうか？​',
+    options: ['土居田町', '北斎院町', '鷹子町', '堀江町'],
     correctAnswer: 0,
-    explanation: '調理中はその場を離れないことが火災予防の基本です。特に油を使う調理の際は要注意です。また、周囲に燃えやすいものを置かないことも重要です。',
-    explanationImage: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'
+    explanation: '松山市で2014年4月の救急コール数が最も多かった地区は土居田町でした。',
+    explanationImage: 'src/image/4.png'
   },
   {
     id: 5,
-    text: '地震発生時、家具の転倒から身を守るための事前対策として正しいものは？',
-    options: ['家具を固定する', '重い物を上に置く', '家具を窓際に置く', '固定具を外す'],
+    text: '怪我をしてしまったとき、救急車を呼ぶか迷ったときにかける番号は？',
+    options: ['#7119', '110', '119', '911'],
     correctAnswer: 0,
-    explanation: '家具の転倒防止には、L字金具やつっぱり棒などで家具をしっかり固定することが効果的です。特に寝室や子供部屋では必須の対策です。',
-    explanationImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'
+    explanation: '愛媛県と県内20市町が共同で、令和5年7月1日（土曜日）から救急の電話相談窓口『えひめ救急電話相談#7119』を開始しています。急なけがや病気で『救急車を呼んだ方がいいか』『病院を受診した方がいいか』などの判断に迷ったとき、365日24時間、看護師や医師などの専門家のアドバイスを電話で受けられます。',
+    explanationImage: 'src/image/5.jpg'
   }
 ];
 

@@ -32,7 +32,7 @@ export const ExplanationCard: React.FC<ExplanationCardProps> = ({
         <p className="text-gray-700 mb-2">正解: {question.options[question.correctAnswer]}</p>
         <p className="text-gray-600 mb-4">{question.explanation}</p>
         {question.explanationImage && (
-          <div className="relative w-full h-48 mb-4">
+          <div className="relative mb-4">
             <img
               src={question.explanationImage}
               alt="説明画像"
