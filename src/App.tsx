@@ -3,9 +3,8 @@ import { QuestionCard } from './components/QuestionCard';
 import { ProgressBar } from './components/ProgressBar';
 import { ResultCard } from './components/ResultCard';
 import { ExplanationCard } from './components/ExplanationCard';
-import { DifficultySelector } from './components/DifficultySelector';
-import { adultQuestions, childrenQuestions } from './data/questions';
-import { QuizState, Difficulty } from './types/quiz';
+import { adultQuestions } from './data/questions';
+import { QuizState } from './types/quiz';
 import { Brain } from 'lucide-react';
 
 function App() {
@@ -18,15 +17,15 @@ function App() {
   });
   const [selectedAnswer, setSelectedAnswer] = useState<number>(-1);
 
-  const questions = quizState.difficulty === 'adult' ? adultQuestions : childrenQuestions;
+  const questions = adultQuestions;
 
-  const handleDifficultySelect = (difficulty: Difficulty) => {
+  const handleStart = () => {
     setQuizState({
       currentQuestionIndex: 0,
       score: 0,
       showResult: false,
       showExplanation: false,
-      difficulty,
+      difficulty: 'adult',
     });
   };
 
@@ -77,7 +76,17 @@ function App() {
         </div>
 
         {!quizState.difficulty ? (
-          <DifficultySelector onSelect={handleDifficultySelect} />
+          <button
+            onClick={handleStart}
+            className="w-full p-6 flex items-center justify-center space-x-4 rounded-lg
+                     bg-blue-50 hover:bg-blue-100 border-2 border-blue-200
+                     transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          >
+            <Brain className="w-8 h-8 text-blue-600" />
+            <div className="text-left">
+              <h3 className="text-xl font-semibold text-blue-700">スタート</h3>
+            </div>
+          </button>
         ) : !quizState.showResult ? (
           <>
             <ProgressBar
