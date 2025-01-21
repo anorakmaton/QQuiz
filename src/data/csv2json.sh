@@ -31,7 +31,7 @@ echo "$jsonData" > "$jsonFilePath"
 echo "JSON data created in $jsonFilePath"
 
 # 大人向けの問題
-csvFilePath="adultQuestion.csv" # CSVファイルのパスを指定
+csvFilePath="Question.csv" # CSVファイルのパスを指定
 jsonFilePath="adultQuestion.json"
 
 # CSVファイルを読み込み、JSON形式に変換
