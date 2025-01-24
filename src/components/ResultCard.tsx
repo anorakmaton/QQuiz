@@ -38,13 +38,13 @@ export const ResultCard: React.FC<ResultCardProps> = ({ score, total, onRestart 
       </p>
       {isHighScore ? (
         <img
-          src="src/image/goukaku.png"
+          src="image/goukaku.png"
           alt="高得点の画像"
           className="w-3/4 h-auto mb-4 rounded-lg mx-auto"
         />
       ) : (
         <img
-          src="src/image/mousukosi.jpeg"
+          src="image/mousukosi.jpeg"
           alt="低得点の画像"
           className="w-3/4 h-auto mb-4 rounded-lg mx-auto"
         />
