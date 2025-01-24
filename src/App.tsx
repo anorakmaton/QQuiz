@@ -4,7 +4,7 @@ import { ProgressBar } from './components/ProgressBar';
 import { ResultCard } from './components/ResultCard';
 import { ExplanationCard } from './components/ExplanationCard';
 import { adultQuestions } from './data/questions';
-import { QuizState } from './types/quiz';
+import { Question, QuizState } from './types/quiz';
 import { Brain } from 'lucide-react';
 
 function App() {
@@ -14,23 +14,29 @@ function App() {
     showResult: false,
     showExplanation: false,
     difficulty: null,
+    questions: [],
   });
   const [selectedAnswer, setSelectedAnswer] = useState<number>(-1);
 
-  const questions = adultQuestions;
+  const getRandomQuestions = (questions: Question[], count: number): Question[] => {
+    const shuffled = questions.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
 
   const handleStart = () => {
+    const selectedQuestions = getRandomQuestions(adultQuestions, 5);
     setQuizState({
       currentQuestionIndex: 0,
       score: 0,
       showResult: false,
       showExplanation: false,
       difficulty: 'adult',
+      questions: selectedQuestions,
     });
   };
 
   const handleAnswer = (answerIndex: number) => {
-    const currentQuestion = questions[quizState.currentQuestionIndex];
+    const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
     const isCorrect = answerIndex === currentQuestion.correctAnswer;
 
     setSelectedAnswer(answerIndex);
@@ -42,7 +48,7 @@ function App() {
   };
 
   const handleContinue = () => {
-    const isLastQuestion = quizState.currentQuestionIndex === questions.length - 1;
+    const isLastQuestion = quizState.currentQuestionIndex === quizState.questions.length - 1;
     
     setQuizState((prev) => ({
       ...prev,
@@ -60,6 +66,7 @@ function App() {
       showResult: false,
       showExplanation: false,
       difficulty: null,
+      questions: [],
     });
     setSelectedAnswer(-1);
   };
@@ -91,16 +98,16 @@ function App() {
           <>
             <ProgressBar
               current={quizState.currentQuestionIndex + 1}
-              total={questions.length}
+              total={quizState.questions.length}
             />
             {!quizState.showExplanation ? (
               <QuestionCard
-                question={questions[quizState.currentQuestionIndex]}
+                question={quizState.questions[quizState.currentQuestionIndex]}
                 onAnswer={handleAnswer}
               />
             ) : (
               <ExplanationCard
-                question={questions[quizState.currentQuestionIndex]}
+                question={quizState.questions[quizState.currentQuestionIndex]}
                 selectedAnswer={selectedAnswer}
                 onContinue={handleContinue}
               />
@@ -109,7 +116,7 @@ function App() {
         ) : (
           <ResultCard
             score={quizState.score}
-            total={questions.length}
+            total={quizState.questions.length}
             onRestart={handleRestart}
           />
         )}

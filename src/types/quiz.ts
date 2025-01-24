@@ -13,6 +13,7 @@ export interface QuizState {
   showResult: boolean;
   showExplanation: boolean;
   difficulty: string | null;
+  questions: Question[]; // 追加
 }
 
 export type Difficulty = 'adult' | 'children';
