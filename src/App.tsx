@@ -3,7 +3,7 @@ import { QuestionCard } from './components/QuestionCard';
 import { ProgressBar } from './components/ProgressBar';
 import { ResultCard } from './components/ResultCard';
 import { ExplanationCard } from './components/ExplanationCard';
-import { adultQuestions } from './data/questions';
+import { adultQuestions, demoQuestions } from './data/questions';
 import { Question, QuizState } from './types/quiz';
 import { Brain } from 'lucide-react';
 
@@ -23,14 +23,17 @@ function App() {
     return shuffled.slice(0, count);
   };
 
-  const handleStart = () => {
-    const selectedQuestions = getRandomQuestions(adultQuestions, 5);
+  const handleStart = (difficulty: 'adult' | 'demo') => {
+    const selectedQuestions = getRandomQuestions(
+      difficulty === 'adult' ? adultQuestions : demoQuestions,
+      5
+    );
     setQuizState({
       currentQuestionIndex: 0,
       score: 0,
       showResult: false,
       showExplanation: false,
-      difficulty: 'adult',
+      difficulty,
       questions: selectedQuestions,
     });
   };
@@ -83,17 +86,30 @@ function App() {
         </div>
 
         {!quizState.difficulty ? (
-          <button
-            onClick={handleStart}
-            className="w-full p-6 flex items-center justify-center space-x-4 rounded-lg
-                     bg-blue-50 hover:bg-blue-100 border-2 border-blue-200
-                     transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
-          >
-            <Brain className="w-8 h-8 text-blue-600" />
-            <div className="text-left">
-              <h3 className="text-xl font-semibold text-blue-700">スタート</h3>
-            </div>
-          </button>
+          <div className="space-y-4">
+            <button
+              onClick={() => handleStart('adult')}
+              className="w-full p-6 flex items-center justify-center space-x-4 rounded-lg
+                       bg-blue-50 hover:bg-blue-100 border-2 border-blue-200
+                       transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            >
+              <Brain className="w-8 h-8 text-blue-600" />
+              <div className="text-left">
+                <h3 className="text-xl font-semibold text-blue-700">スタート</h3>
+              </div>
+            </button>
+            <button
+              onClick={() => handleStart('demo')}
+              className="w-full p-6 flex items-center justify-center space-x-4 rounded-lg
+                       bg-green-50 hover:bg-green-100 border-2 border-green-200
+                       transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-300"
+            >
+              <Brain className="w-8 h-8 text-green-600" />
+              <div className="text-left">
+                <h3 className="text-xl font-semibold text-green-700">デモ</h3>
+              </div>
+            </button>
+          </div>
         ) : !quizState.showResult ? (
           <>
             <ProgressBar
