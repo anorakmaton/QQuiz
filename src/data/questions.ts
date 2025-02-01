@@ -1,5 +1,5 @@
-import childrenQuestions from './childrenQuestion.json';
+import demoQuestions from './demoQuestion.json';
 import adultQuestions from './adultQuestion.json';
 import { Question } from '../types/quiz';
 
-export { childrenQuestions, adultQuestions };
+export { demoQuestions, adultQuestions };

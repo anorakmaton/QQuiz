@@ -16,4 +16,4 @@ export interface QuizState {
   questions: Question[]; // 追加
 }
 
-export type Difficulty = 'adult' | 'children';
+export type Difficulty = 'adult' | 'demo';

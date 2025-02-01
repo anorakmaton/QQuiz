@@ -1,7 +1,7 @@
 #!/bin/bash
 
-csvFilePath="childrenQuestion.csv" # CSVファイルのパスを指定
-jsonFilePath="childrenQuestion.json"
+csvFilePath="demoQuestion.csv" # CSVファイルのパスを指定
+jsonFilePath="demoQuestion.json"
 
 # CSVファイルを読み込み、JSON形式に変換
 jsonData=$(awk -F, '
