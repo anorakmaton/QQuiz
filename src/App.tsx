@@ -24,10 +24,9 @@ function App() {
   };
 
   const handleStart = (difficulty: 'adult' | 'demo') => {
-    const selectedQuestions = getRandomQuestions(
-      difficulty === 'adult' ? adultQuestions : demoQuestions,
-      5
-    );
+    const selectedQuestions = difficulty === 'adult'
+      ? getRandomQuestions(adultQuestions, 5)
+      : demoQuestions.slice(0, 5);
     setQuizState({
       currentQuestionIndex: 0,
       score: 0,
