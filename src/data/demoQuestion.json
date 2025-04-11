@@ -21,7 +21,7 @@
   "options": ["4台", "7台", "11台", "15台"],
   "correctAnswer": 2,
   "explanation": "救急車の出動件数は年々増加しており、2024年の出動件数が最も多い日に同時に出動していた松山市の救急車は11両でした。以下の図は2024年の出動件数が最も多かった日の救急車の出動状況を表したガントチャートです。緊急性の高い傷病者のもとへ、救急車がより早く到着できるよう救急車適正利用をお願いします。",
-  "explanationImage": "image/7.jpg"
+  "explanationImage": "./image/7.jpg"
 },
 {
   "id": 4,
@@ -37,6 +37,6 @@
   "options": ["平成27年", "平成30年", "令和2年", "令和5年"],
   "correctAnswer": 3,
   "explanation": "グラフをみると、救急車の出動件数はコロナの影響を受けた令和2年を除き年々増加しています。そのため、救急車の適切な利用を心掛けましょう。https://www.city.matsuyama.ehime.jp/kurashi/bosai/sbbousai/sbtoukei/1263612024072.files/08kyuukyuu_5.pdf",
-  "explanationImage": "image/30.png"
+  "explanationImage": "./image/30.png"
 }
 ]
