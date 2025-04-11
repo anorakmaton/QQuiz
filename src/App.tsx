@@ -3,7 +3,7 @@ import { QuestionCard } from './components/QuestionCard';
 import { ProgressBar } from './components/ProgressBar';
 import { ResultCard } from './components/ResultCard';
 import { ExplanationCard } from './components/ExplanationCard';
-import { adultQuestions, demoQuestions } from './data/questions';
+import { loadQuestions, loadDemoQuestions } from './data/questions';
 import { Question, QuizState } from './types/quiz';
 import { Brain } from 'lucide-react';
 
@@ -24,9 +24,10 @@ function App() {
   };
 
   const handleStart = (difficulty: 'adult' | 'demo') => {
-    const selectedQuestions = difficulty === 'adult'
-      ? getRandomQuestions(adultQuestions, 5)
-      : demoQuestions.slice(0, 5);
+    const allQuestions = difficulty === 'adult'
+      ? loadQuestions()
+      : loadDemoQuestions();
+    const selectedQuestions = getRandomQuestions(allQuestions, 5);
     setQuizState({
       currentQuestionIndex: 0,
       score: 0,

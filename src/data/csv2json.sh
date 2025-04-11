@@ -1,7 +1,12 @@
 #!/bin/bash
 
-csvFilePath="demoQuestion.csv" # CSVファイルのパスを指定
-jsonFilePath="demoQuestion.json"
+if [ "$#" -lt 1 ]; then
+    echo "Usage: $0 <csvFilePath>"
+    exit 1
+fi
+
+csvFilePath="$1" # コマンドライン引数からCSVファイルのパスを取得
+jsonFilePath="${csvFilePath%.csv}.json" # CSVファイルの拡張子をJSONに置き換え
 
 # CSVファイルを読み込み、JSON形式に変換
 jsonData=$(awk -F, '
