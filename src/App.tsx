@@ -3,7 +3,7 @@ import { QuestionCard } from './components/QuestionCard';
 import { ProgressBar } from './components/ProgressBar';
 import { ResultCard } from './components/ResultCard';
 import { ExplanationCard } from './components/ExplanationCard';
-import { getAdultQuestions, getDemoQuestions, parseCSV } from './data/questions';
+import { getAdultQuestions, getDemoQuestions } from './data/questions';
 import { Question, QuizState } from './types/quiz';
 import { Brain } from 'lucide-react';
 
