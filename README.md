@@ -15,7 +15,7 @@
 
 ## 手順
 
-1. **リポジトリをクローンする**（プロジェクトがGitHub上にある場合）
+1. **リポジトリをクローンする**
 
    ```bash
    git clone https://github.com/anorakmaton/QQuiz
